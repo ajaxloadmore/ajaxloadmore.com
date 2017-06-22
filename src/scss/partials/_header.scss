@@ -1,0 +1,71 @@
+header.site-header{
+	background-color: $header_bkg_color;
+	background-size: cover;
+	height: 100vh;
+	padding-top: 80px;
+	display: flex;
+	align-items: center;
+
+	.img{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: url('../img/temp(1).jpg') no-repeat;
+		background-size: cover;
+		opacity: 0.1;
+	}
+
+	.hero{
+		max-width: 50%;
+		padding-bottom: 40px;
+		position: relative;
+		z-index: 9;
+		h1, p{
+			color: #fff;
+		}
+
+		h1{
+			margin: 0 0 10px;
+		}
+		p.intro{
+			opacity: 0.8;
+		}
+	}
+
+
+	nav{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		height: 80px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #fff;
+		padding: 0 30px;
+		img{
+			max-width: 280px;
+			float: left;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				background: none;
+				display: inline-block;
+				margin: 0 0 0 15px;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				font-weight: 600;
+				a{
+
+				}
+			}
+		}
+	}
+}

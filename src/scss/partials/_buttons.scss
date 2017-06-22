@@ -1,0 +1,50 @@
+
+// Standard button style
+// White text, border on transparent background
+.button,
+input[type=submit],
+button{
+   width:auto;
+   display: inline-block;
+   border: none;
+   margin-bottom: 4px;
+   -webkit-appearance: caret;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	i{
+		margin: 0 10px 0 0;
+	}
+}
+.button a,
+input[type=submit],
+button,
+a.button{
+	font-family: $font;
+	font-weight: 600;
+	display: inline-block;
+	background: #2595ff;
+	color: #fff;
+	border: 2px solid #2595ff;
+	padding: 15px 30px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	line-height: 1;
+	height: auto;
+	text-align: center;
+	text-decoration: none !important;
+	-webkit-appearance: none;
+	transition: $transition;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	&:hover,
+	&:focus,
+	&:active {
+   	text-decoration: none;
+   	color: $grey;
+   	border-color: $grey;
+   	background-color: transparent;
+		text-decoration: none;
+		outline: none;
+	}
+}
