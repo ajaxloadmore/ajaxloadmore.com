@@ -10,22 +10,26 @@ button{
    margin-bottom: 4px;
    -webkit-appearance: caret;
 	text-transform: uppercase;
-	font-size: 1.6rem;
 	i{
-		margin: 0 10px 0 0;
+		position: relative;
+		left: -2px;
+		margin: 0 8px 0 0;
+		opacity: 0.75;
 	}
 }
+
 .button a,
 input[type=submit],
 button,
 a.button{
 	font-family: $font;
 	font-weight: 600;
+	font-size: 1.5rem;
 	display: inline-block;
-	background: #2595ff;
+	background: $link;
 	color: #fff;
-	border: 2px solid #2595ff;
-	padding: 15px 30px;
+	border: none;
+	padding: 15px 26px;
 	border-radius: 2px;
 	text-transform: uppercase;
 	line-height: 1;
@@ -37,14 +41,32 @@ a.button{
 	white-space: nowrap;
 	vertical-align: middle;
 	cursor: pointer;
+	margin: 0 10px 10px 0;
+	&.lg{
+		padding: 20px 34px;
+		font-size: 1.7rem;
+	}
 	&:hover,
 	&:focus,
 	&:active {
    	text-decoration: none;
-   	color: $grey;
-   	border-color: $grey;
-   	background-color: transparent;
+   	color: #fff;
+   	background-color: $link_hover;
+   	border-color: transparent;
 		text-decoration: none;
 		outline: none;
+	}
+	&:focus,
+	&:active{
+		box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.1);
+	}
+	&.white{
+		background-color: #fff;
+		color: $link;
+		&:hover,
+		&:focus,
+		&:active{
+			opacity: 0.9;
+		}
 	}
 }

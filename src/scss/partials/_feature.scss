@@ -1,7 +1,57 @@
 .feature{
-	padding: 80px;
+	padding: 90px;
 	background: #fff;
+	img{
+		display: block;
+	}
+	.padded{
+		padding: 30px;
+	}
 
+	.headline{
+		padding-bottom: 40px;
+	}
+
+	&.p-t-0{
+		padding-top: 0;
+	}
+	&.p-b-0{
+		padding-bottom: 0;
+	}
+
+	.flex{
+		display: flex;
+		align-items: center;
+		&.btm{
+			img{
+
+			}
+		}
+	}
+
+	// CTA Listing
+	.cta-list{
+		a{
+			display: block;
+			h4,
+			p{
+				padding: 0 5%;
+			}
+			&:hover{
+				text-decoration: none;
+				h4{
+					text-decoration: underline;
+				}
+			}
+		}
+		img{
+			display: block;
+			margin: 0 0 15px;
+		}
+	}
+
+
+	// Dark Theme
 	&.dark{
 		color: #fff;
 		h3, h4, h5, li, p{
@@ -17,21 +67,23 @@
 		&.grey{
 			background-color: #262f36;
 			a{
-				color: #81b6ff;
+				color: #8ceed6;
 				&:hover,
 				&:focus{
-					text-decoration: underline;
+					color: #a9fbe7;
 				}
 			}
 		}
 	}
 
-	.light{
-		.grey{
+	// Light Theme
+	&.light{
+		&.grey{
 			background-color: #f4f5f6;
 		}
 	}
 
+	// Stats
 	.stat{
 		text-align: center;
 		display: inline-block;

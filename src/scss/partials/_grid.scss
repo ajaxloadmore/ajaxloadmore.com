@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	width: 100%;
 	padding: 0;
-	max-width: 1170px;
+	max-width: 1270px;
 	&:after {
 		clear:both;
 		content:".";
@@ -11,13 +11,14 @@
 		visibility:hidden;
 	}
 	.row{
-		width: calc(100% + ($padding*2));
+		width: calc(100% + 30px);
 		margin-left: -$padding;
 	}
 }
 .column{
 	width: 100%;
 	padding: 0 $padding;
+	position: relative;
 	&.half,
 	&.third,
 	&.fourth{
@@ -28,6 +29,9 @@
 	}
 	&.third{
 		width: 33.333%;
+	}
+	&.two_third{
+		width: 66.666%;
 	}
 	&.fourth{
 		width: 25%;
