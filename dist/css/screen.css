@@ -1,4 +1,8 @@
-/* Site Foundation */
+/* Site Foundation
+
+	https://themes.getbootstrap.com/products/marketing
+
+*/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600");
 /*
    @include breakpoint(medium down) {}
@@ -422,20 +426,30 @@ template {
     display: block;
     height: 0;
     visibility: hidden; }
-  .row .column {
-    width: 100%;
-    padding: 0 0.935rem; }
-    .row .column.half, .row .column.third, .row .column.fourth {
-      float: left; }
-    .row .column.half {
-      width: 50%; }
-    .row .column.third {
-      width: 33.333%; }
-    .row .column.third {
-      width: 25%; }
   .row .row {
     width: calc(100% + ($padding*2));
     margin-left: -0.935rem; }
+
+.column {
+  width: 100%;
+  padding: 0 0.935rem; }
+  .column.half, .column.third, .column.fourth {
+    float: left; }
+  .column.half {
+    width: 50%; }
+  .column.third {
+    width: 33.333%; }
+  .column.fourth {
+    width: 25%; }
+  .column.push-half {
+    position: relative;
+    left: 50%; }
+  .column.push-third {
+    position: relative;
+    left: 33.333%; }
+  .column.push-fourth {
+    position: relative;
+    left: 25%; }
 
 .button,
 input[type=submit],
@@ -514,16 +528,18 @@ header.site-header {
     background-size: cover;
     opacity: 0.1; }
   header.site-header .hero {
-    max-width: 50%;
+    max-width: 45%;
     padding-bottom: 40px;
+    padding-left: 5%;
     position: relative;
     z-index: 9; }
     header.site-header .hero h1, header.site-header .hero p {
       color: #fff; }
     header.site-header .hero h1 {
-      margin: 0 0 10px; }
+      margin: 0 0 10px;
+      font-weight: 600; }
     header.site-header .hero p.intro {
-      opacity: 0.8; }
+      opacity: 0.85; }
   header.site-header nav {
     position: fixed;
     top: 0;
@@ -540,8 +556,7 @@ header.site-header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background: #fff;
-    padding: 0 30px; }
+    background: #fff; }
     header.site-header nav img {
       max-width: 280px;
       float: left; }
@@ -559,6 +574,42 @@ header.site-header {
 .feature {
   padding: 80px;
   background: #fff; }
+  .feature.dark {
+    color: #fff; }
+    .feature.dark h3, .feature.dark h4, .feature.dark h5, .feature.dark li, .feature.dark p {
+      color: #fff; }
+    .feature.dark p,
+    .feature.dark .stat {
+      color: #bec6cd; }
+    .feature.dark strong {
+      color: #fff; }
+    .feature.dark.grey {
+      background-color: #262f36; }
+      .feature.dark.grey a {
+        color: #81b6ff; }
+        .feature.dark.grey a:hover, .feature.dark.grey a:focus {
+          text-decoration: underline; }
+  .feature .light .grey {
+    background-color: #f4f5f6; }
+  .feature .stat {
+    text-align: center;
+    display: inline-block;
+    padding-left: 70px;
+    position: relative;
+    text-align: left;
+    line-height: 1.35;
+    font-size: 1.7rem; }
+    .feature .stat strong {
+      display: block;
+      font-size: 3rem; }
+    .feature .stat i {
+      display: block;
+      font-size: 58px;
+      opacity: 0.7;
+      margin: 0 0 15px;
+      position: absolute;
+      left: -2px;
+      top: 6px; }
 
 /* Start */
 * {
@@ -643,8 +694,7 @@ body {
   color: #6c6f73;
   -webkit-appearance: none; }
 
-p.bold,
-p strong {
+strong {
   font-weight: 600; }
 
 p, ul, ol {
@@ -702,27 +752,33 @@ h1, h2, h3, h4, h5, h6 {
 h1,
 h3.like-h1 {
   font-family: "Work sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 4.3rem;
+  font-size: 3.4rem;
   margin: 0 0 20px;
   line-height: 1.3em; }
 
 h2 {
   font-family: "Work sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 3.4rem;
+  font-size: 3rem;
   line-height: 1.25em; }
 
 h3 {
-  font-size: 2.4rem;
-  line-height: 1.35em; }
+  font-size: 2.6rem;
+  line-height: 1.3em; }
 
 h4 {
   font-size: 2rem;
+  line-height: 1.3em;
   margin: 0 0 10px; }
 
 h5 {
-  font-size: 1.8rem;
-  margin: 0 0 10px;
-  text-transform: uppercase; }
+  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+  line-height: 1.3em;
+  margin: 0 0 5px;
+  font-weight: 600;
+  color: #6c6f73;
+  text-transform: uppercase;
+  opacity: 0.7; }
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
   text-decoration: underline; }

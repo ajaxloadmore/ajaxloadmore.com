@@ -10,26 +10,38 @@
 		height:0;
 		visibility:hidden;
 	}
-	.column{
-		width: 100%;
-		padding: 0 $padding;
-		&.half,
-		&.third,
-		&.fourth{
-			float: left;
-		}
-		&.half{
-			width: 50%;
-		}
-		&.third{
-			width: 33.333%;
-		}
-		&.third{
-			width: 25%;
-		}
-	}
 	.row{
 		width: calc(100% + ($padding*2));
 		margin-left: -$padding;
+	}
+}
+.column{
+	width: 100%;
+	padding: 0 $padding;
+	&.half,
+	&.third,
+	&.fourth{
+		float: left;
+	}
+	&.half{
+		width: 50%;
+	}
+	&.third{
+		width: 33.333%;
+	}
+	&.fourth{
+		width: 25%;
+	}
+	&.push-half{
+		position: relative;
+		left: 50%;
+	}
+	&.push-third{
+		position: relative;
+		left: 33.333%;
+	}
+	&.push-fourth{
+		position: relative;
+		left: 25%;
 	}
 }
