@@ -684,6 +684,10 @@ header.site-header {
   header.site-header img {
     max-width: 280px;
     float: left; }
+    @media screen and (max-width: 768px) {
+      header.site-header img {
+        float: none;
+        margin: 0 auto; } }
   header.site-header ul {
     float: right;
     margin: 0;

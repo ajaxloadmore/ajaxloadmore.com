@@ -17,6 +17,10 @@ header.site-header{
 	img{
 		max-width: 280px;
 		float: left;
+		@media screen and (max-width: $small){
+			float: none;
+			margin: 0 auto;
+		}
 	}
 	ul{
 		float: right;
