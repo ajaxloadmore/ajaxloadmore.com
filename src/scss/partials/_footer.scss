@@ -29,4 +29,9 @@ footer.site-footer{
 			font-size: 1.4rem;
 		}
 	}
+	@media screen and (max-width: $small){
+		.column.third{
+			padding-top: 35px;
+		}
+	}
 }

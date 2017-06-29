@@ -3,6 +3,12 @@
 	width: 100%;
 	padding: 0;
 	max-width: 1270px;
+	@media screen and (max-width: $small){
+		padding: 0 $padding;
+		.row{
+			padding: 0;
+		}
+	}
 	&:after {
 		clear:both;
 		content:".";
@@ -47,5 +53,42 @@
 	&.push-fourth{
 		position: relative;
 		left: 25%;
+	}
+	&.pull-half{
+		position: relative;
+		left: -50%;
+	}
+	&.pull-third{
+		position: relative;
+		left: -33.33%;
+	}
+	&.pull-fourth{
+		position: relative;
+		left: -25%;
+	}
+}
+
+@media screen and (max-width: $small){
+	.column{
+		width: 100%;
+		float: none;
+		&.half,
+		&.third,
+		&.fourth{
+			width: 100%;
+			float: none;
+		}
+		&.push-half,
+		&.push-third,
+		&.push-fourth,
+		&.pull-half,
+		&.pull-third,
+		&.pull-fourth{
+			position: relative;
+			left: 0;
+		}
+	}
+	.hide-for-small{
+		display: none !important;
 	}
 }
