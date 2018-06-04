@@ -120,7 +120,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -582,6 +583,9 @@ a.button {
       -ms-flex-align: center;
           align-items: center;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .banner {
+      min-height: 350px; } }
   .banner .hero {
     max-width: 50%;
     padding-bottom: 40px;
@@ -619,7 +623,7 @@ a.button {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: url("../img/ajax-load-more-infinite-scrolling.jpg") no-repeat;
+    background: url("../img/ajax-load-more-infinite-scrolling.jpg") no-repeat left center;
     background-size: cover;
     opacity: 0.25; }
   .banner nav {
@@ -845,7 +849,7 @@ body {
   width: 100%;
   height: 100%;
   -webkit-text-size-adjust: none;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 img {
   max-width: 100%;
