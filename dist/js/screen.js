@@ -81,28 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/functions.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/scss/screen.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/functions.js":
-/*!*****************************!*\
-  !*** ./src/js/functions.js ***!
-  \*****************************/
+/***/ "./src/scss/screen.scss":
+/*!******************************!*\
+  !*** ./src/scss/screen.scss ***!
+  \******************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-// Open links in new window.
-var links = document.querySelectorAll('a');
-links.forEach(function (link) {
-  return link.target = '_blank';
-});
+// removed by extract-text-webpack-plugin
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=functions.js.map
+//# sourceMappingURL=screen.js.map
