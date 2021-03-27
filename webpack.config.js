@@ -1,79 +1,83 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var path = require('path');
-var dir = 'dist';
+var webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+var path = require("path");
+var dir = "dist";
 
 module.exports = {
 	entry: {
-		'functions': './src/js/functions.js',
-		'screen': './src/scss/screen.scss'
+		functions: "./src/js/functions.js",
+		screen: "./src/scss/screen.scss",
 	},
 	output: {
 		path: path.join(__dirname, dir),
-		filename: 'js/[name].js'
+		filename: "js/[name].js",
 	},
 	module: {
-		rules: [{
+		rules: [
+			{
 				test: /\.(js|jsx)$/,
-				loader: 'babel-loader',
+				loader: "babel-loader",
 				exclude: /node_modules/,
 				query: {
-					presets: ['es2015', 'react']
-				}
+					presets: ["es2015", "react"],
+				},
 			},
 			{
 				test: /\.(jpe?g|gif|png|svg)$/,
-				loader: 'file-loader',
+				loader: "file-loader",
 				options: {
-					name: 'img/[name].[ext]',
-					publicPath: '../'
-				}
+					name: "img/[name].[ext]",
+					publicPath: "../",
+				},
 			},
 			{
 				test: /\.woff$|\.woff2?$|\.ttf$|\.eot$|\.otf$/,
-				loader: 'file-loader',
+				loader: "file-loader",
 				options: {
-					name: 'fonts/[name].[ext]',
-					publicPath: '../'
-				}
+					name: "fonts/[name].[ext]",
+					publicPath: "../",
+				},
 			},
 			{
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [{
-							loader: 'css-loader',
-							options: {
-								sourceMap: true
-							}
-						},
+					fallback: "style-loader",
+					use: [
 						{
-							loader: 'postcss-loader',
-							options: {
-								sourceMap: true
-							}
-						},
-						{
-							loader: 'sass-loader',
+							loader: "css-loader",
 							options: {
 								sourceMap: true,
-								outputStyle: 'expanded'
-							}
-						}
-					]
+							},
+						},
+						{
+							loader: "postcss-loader",
+							options: {
+								sourceMap: true,
+							},
+						},
+						{
+							loader: "sass-loader",
+							options: {
+								sourceMap: true,
+								outputStyle: "expanded",
+							},
+						},
+					],
 				}),
-				exclude: /node_modules/
-			}
-		]
+				exclude: /node_modules/,
+			},
+		],
 	},
 	plugins: [
 		new ExtractTextPlugin({
-			filename: 'css/[name].css'
+			filename: "css/[name].css",
 		}),
-		new CopyWebpackPlugin([{
-			from: 'src/img',
-			to: 'img'
-		}])
-	]
+		new CopyWebpackPlugin([
+			{
+				from: "src/img",
+				to: "img",
+			},
+		]),
+	],
 };
