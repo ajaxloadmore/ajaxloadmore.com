@@ -1,5 +1,4 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 var path = require("path");
 var dir = "dist";
@@ -25,59 +24,49 @@ module.exports = {
 			},
 			{
 				test: /\.(jpe?g|gif|png|svg)$/,
-				loader: "file-loader",
-				options: {
-					name: "img/[name].[ext]",
-					publicPath: "../",
+				type: "asset/resource",
+				generator: {
+					filename: "img/[name][ext]",
 				},
 			},
 			{
-				test: /\.woff$|\.woff2?$|\.ttf$|\.eot$|\.otf$/,
-				loader: "file-loader",
-				options: {
-					name: "fonts/[name].[ext]",
-					publicPath: "../",
+				test: /\.woff2?$|\.ttf$|\.eot$|\.otf$/,
+				type: "asset/resource",
+				generator: {
+					filename: "fonts/[name][ext]",
 				},
 			},
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
-					use: [
-						{
-							loader: "css-loader",
-							options: {
-								sourceMap: true,
-							},
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: "css-loader",
+						options: { sourceMap: true },
+					},
+					{
+						loader: "postcss-loader",
+						options: { sourceMap: true },
+					},
+					{
+						loader: "sass-loader",
+						options: {
+							sourceMap: true,
+							api: "modern-compiler",
+							sassOptions: { style: "expanded" },
 						},
-						{
-							loader: "postcss-loader",
-							options: {
-								sourceMap: true,
-							},
-						},
-						{
-							loader: "sass-loader",
-							options: {
-								sourceMap: true,
-								outputStyle: "expanded",
-							},
-						},
-					],
-				}),
+					},
+				],
 				exclude: /node_modules/,
 			},
 		],
 	},
 	plugins: [
-		new ExtractTextPlugin({
+		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
 		}),
-		new CopyWebpackPlugin([
-			{
-				from: "src/img",
-				to: "img",
-			},
-		]),
+		new CopyWebpackPlugin({
+			patterns: [{ from: "src/img", to: "img" }],
+		}),
 	],
 };

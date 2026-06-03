@@ -1,5 +1,5 @@
 module.exports = {
   plugins: {
-    'autoprefixer': {browsers: ['last 10 versions']},
+    'autoprefixer': {overrideBrowserslist: ['last 2 versions']},
   }
 }
