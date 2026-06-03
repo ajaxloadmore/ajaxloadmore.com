@@ -1,15 +1,9 @@
 <!doctype html>
-<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en" class="no-js">
-<!--<![endif]-->
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>WordPress Infinite Scroll - Ajax Load More</title>
+	<title>WordPress Filtering and Infinite Scroll with Ajax Load More</title>
 	<link rel='stylesheet' href='dist/css/screen.css' type='text/css' media='all' />
 	<link rel='stylesheet' id='font_awesome-css'
 		href='//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.5.9' type='text/css'
@@ -21,12 +15,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 	<meta name="description"
-		content="Ajax Load More is the ultimate solution to infinite scroll WordPress posts, custom post types, single posts and comments with Ajax queries." />
+		content="Ajax Load More is the ultimate WordPress plugin for lazy loading, infinite scroll, load more pagination, and advanced filtering with Ajax driven queries." />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="WordPress Infinite Scroll with Ajax Load More" />
 	<meta property="og:description"
-		content="Ajax Load More is the ultimate solution to infinite scroll WordPress posts, single posts and comments with Ajax queries." />
+		content="Ajax Load More is the ultimate WordPress plugin for lazy loading, infinite scroll, load more pagination, and advanced filtering with Ajax driven queries." />
 	<meta property="og:url" content="https://connekthq.com/plugins/ajax-load-more/" />
 	<meta property="og:site_name" content="Connekt Media" />
 	<meta property="article:publisher" content="https://www.facebook.com/connekthq" />
@@ -35,33 +29,32 @@
 	<meta property="og:image" content="https://connekthq.com/wp-content/uploads/ajax-load-more-promo.png" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:description"
-		content="Ajax Load More is the ultimate solution to infinite scroll WordPress posts, single posts and comments with Ajax queries." />
+		content="Ajax Load More is the ultimate WordPress plugin for lazy loading, infinite scroll, load more pagination, and advanced filtering with Ajax driven queries." />
 	<meta name="twitter:title" content="WordPress Infinite Scroll with Ajax Load More" />
 	<meta name="twitter:site" content="@connekthq" />
 	<meta name="twitter:image" content="https://connekthq.com/wp-content/uploads/ajax-load-more-share.png" />
-	<meta name="twitter:creator" content="@kaptonkaos" />
-</head>
+	<meta name="twitter:creator" content="@kaptonkaos" /><!-- Google tag (gtag.js) -->
 
-<body>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HMZ4FG9XW2"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZ7TR7Z7WC"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
-		gtag('config', 'G-HMZ4FG9XW2');
+		gtag('config', 'G-KZ7TR7Z7WC');
 	</script>
+</head>
+
+<body>
 
 	<div id="container">
-
 		<header class="site-header">
 			<div class="row">
 				<div class="column">
 					<img src="dist/img/logo-ajax-load-more-1x.png" alt="Ajax Load More Logo" />
 					<ul class="hide-for-small">
-						<li><a href="https://connekthq.com/plugins/ajax-load-more/"><i class="fa fa-external-link"
-									aria-hidden="true"></i> Visit Plugin Site</a></li>
+						<li><a href="https://ajaxloadmore.com/"><i class="fa fa-external-link" aria-hidden="true"></i> Visit
+								Plugin Site</a></li>
 					</ul>
 				</div>
 			</div>
@@ -74,11 +67,10 @@
 						<p class="intro">Ajax Load More is the ultimate <strong>#WordPress</strong> plugin for lazy loading
 							&amp; endless scrolling with Ajax powered queries.</p>
 						<p class="button">
-							<a href="https://connekthq.com/plugins/ajax-load-more/" class="lg">Visit Plugin Site</a>
+							<a href="https://ajaxloadmore.com/" class="lg">Visit Plugin Site</a>
 							<a href="https://wordpress.org/plugins/ajax-load-more/" class="lg white">Download Now</a>
 						</p>
 					</div>
-
 					<img style="display: none;" src="https://connekthq.com/wp-content/uploads/ajax-load-more-banner.png" />
 				</div>
 			</div>
@@ -94,8 +86,8 @@
 						<h3>Infinite scroll any content type WordPress offers with Ajax Load More!</h3>
 						<p>From blog posts and multipage content to single posts and WooCommerce products – Ajax Load More can
 							handle it all.</p>
-						<p class="button no-margin-btm"><a href="https://connekthq.com/plugins/ajax-load-more/examples/"
-								target="_b">View Examples</a></p>
+						<p class="button no-margin-btm"><a href="https://ajaxloadmore.com/examples/" target="_b">View
+								Examples</a></p>
 					</div>
 				</div>
 				<div class="column half pull-half">
@@ -129,8 +121,8 @@
 				<div class="column third centered">
 					<div class="stat">
 						<i class="fa fa-github" aria-hidden="true"></i>
-						<strong>220+</strong> <a href="https://github.com/dcooney/wordpress-ajax-load-more/"
-							target="_blank">Github Stars</a>
+						<strong>220+</strong> <a href="https://github.com/ajaxloadmore/ajax-load-more" target="_blank">Github
+							Stars</a>
 					</div>
 				</div>
 			</div>
@@ -146,30 +138,31 @@
 
 			<div class="row cta-list">
 				<div class="column fourth centered">
-					<a href="https://connekthq.com/plugins/ajax-load-more/extensions/advanced-custom-fields/"
-						target="_blank">
-						<img src="https://connekthq.com/wp-content/uploads/extension-acf.jpg" alt="Advanced Custom Fields" />
+					<a href="https://ajaxloadmore.com/extensions/advanced-custom-fields/" target="_blank">
+						<img src="https://ajaxloadmore.com/wp-content/uploads/extension-acf.jpg"
+							alt="Advanced Custom Fields" />
 						<h4>Advanced Custom Fields</h4>
 						<p class="small">Display field type data with Ajax Load More.</p>
 					</a>
 				</div>
 				<div class="column fourth centered">
-					<a href="https://connekthq.com/plugins/ajax-load-more/extensions/relevanssi/" target="_blank">
-						<img src="https://connekthq.com/wp-content/uploads/extension-relevanssi.jpg" alt="Relevanssi" />
+					<a href="https://ajaxloadmore.com/extensions/relevanssi/" target="_blank">
+						<img src="https://ajaxloadmore.com/wp-content/uploads/extension-relevanssi.jpg" alt="Relevanssi" />
 						<h4>Relevanssi</h4>
 						<p class="small">Display Relevanssi search results with Ajax Load More.</p>
 					</a>
 				</div>
 				<div class="column fourth centered">
-					<a href="https://connekthq.com/plugins/ajax-load-more/extensions/rest-api/" target="_blank">
-						<img src="https://connekthq.com/wp-content/uploads/extension-rest-api.jpg" alt="WordPress Rest API" />
+					<a href="https://ajaxloadmore.com/extensions/rest-api/" target="_blank">
+						<img src="https://ajaxloadmore.com/wp-content/uploads/extension-rest-api.jpg"
+							alt="WordPress Rest API" />
 						<h4>WordPress Rest API</h4>
 						<p class="small">Enable compatibility with the WordPress REST API.</p>
 					</a>
 				</div>
 				<div class="column fourth centered">
-					<a href="https://connekthq.com/plugins/ajax-load-more/extensions/searchwp/" target="_blank">
-						<img src="https://connekthq.com/wp-content/uploads/extension-searchwp.jpg" alt="SearchWP" />
+					<a href="https://ajaxloadmore.com/extensions/searchwp/" target="_blank">
+						<img src="https://ajaxloadmore.com/wp-content/uploads/extension-searchwp.jpg" alt="SearchWP" />
 						<h4>SearchWP</h4>
 						<p class="small">Display SearchWP query results with Ajax Load More.</p>
 					</a>
@@ -192,19 +185,17 @@
 						<div class="column third">
 							<h5>More Info</h5>
 							<ul>
-								<li><a href="https://connekthq.com/plugins/ajax-load-more/add-ons/">Add-ons</a></li>
-								<li><a href="https://connekthq.com/plugins/ajax-load-more/examples/">Examples</a></li>
-								<li><a href="https://connekthq.com/plugins/ajax-load-more/docs/">Documetation</a></li>
-								<li><a href="https://connekthq.com/plugins/ajax-load-more/support/">Support</a></li>
+								<li><a href="https://ajaxloadmore.com/add-ons/">Add-ons</a></li>
+								<li><a href="https://ajaxloadmore.com/examples/">Examples</a></li>
+								<li><a href="https://ajaxloadmore.com/docs/">Documentation</a></li>
+								<li><a href="https://ajaxloadmore.com/support/">Support</a></li>
 							</ul>
 						</div>
 						<div class="column third">
 							<h5>Plugin Family</h5>
 							<ul>
-								<li><a href="https://connekthq.com/plugins/broadcast/">Broadcast</a></li>
-								<li><a href="https://connekthq.com/plugins/easy-query/">Easy Query</a></li>
-								<li><a href="https://connekthq.com/plugins/instant-images/">Instant Images</a></li>
-								<li><a href="https://connekthq.com/plugins/velocity/">Velocity</a></li>
+								<li><a href="https://wordpress.org/plugins/block-manager/">Block Manager</a></li>
+								<li><a href="https://wordpress.org/plugins/instant-images/">Instant Images</a></li>
 							</ul>
 						</div>
 						<div class="column third">
